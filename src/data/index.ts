@@ -1,3 +1,9 @@
+import { 
+  SiHtml5, SiCss3, SiJavascript, SiPhp, SiLaravel, 
+  SiKotlin, SiMysql, SiReact, SiNextdotjs, SiNodedotjs, 
+  SiExpress, SiPostgresql, SiFigma, SiCanva
+} from "react-icons/si";
+
 export const navLinks = [
     { name: "Me", href: "me" },
     { name: "Journey", href: "journey" },
@@ -15,14 +21,17 @@ export const personal = {
         "Fullstack Developer;",
         "Retail Trader;"
     ],
-    currently: "Currently working on my final project.",
+    currently: "Currently working on my final project!",
     description: "Hello! I'm Nikolas Henrik Owen Chan, people call me NikoHoc. I'm an informatics student at Petra Christian University, passionate about UI/UX design and fullstack development. I love creating user-friendly digital experiences and writing clean, efficient code. I also trade Crypto or Indonesian Stocks!",
+    contact: {
+        headline: "Got an Idea? Let's Talk!",
+        description: "I am currently open for collaboration and new opportunities. If you are looking for a developer to bring your ideas to life, let's connect and build something amazing together! P.S. I’m also up for a coffee chat if you want to discuss about the current market condition, and trading / invesment strategy."
+    },
     socials: {
         gmail: "mailto:niko.owen88@gmail.com",
         instagram: "https://www.instagram.com/niko_hoc/",
         linkedin: "https://www.linkedin.com/in/nikohoc/",
         github: "https://www.github.com/nikohoc",
-        whatsapp: "https://wa.me/6281257026600",
     }
 };
 
@@ -65,7 +74,32 @@ export const projects = [
     id: 1,
     title: "E-Commerce Web",
     desc: "Aplikasi jual beli dengan fitur payment gateway.",
-    image: "/path/to/image.png", // Atau import image diatas
+    image: "/path/to/image.png",
     tools: ["React", "NodeJS", "MongoDB"],
   },
 ];
+
+
+export const toolsData = {
+  used: [
+    { name: "HTML5", icon: SiHtml5, color: "text-orange-600" },
+    { name: "CSS3", icon: SiCss3, color: "text-blue-600" },
+    { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
+    { name: "PHP", icon: SiPhp, color: "text-purple-700" },
+    { name: "Laravel", icon: SiLaravel, color: "text-red-600" },
+    { name: "Kotlin", icon: SiKotlin, color: "text-purple-600" },
+    { name: "MySQL", icon: SiMysql, color: "text-blue-500" },
+    { name: "React", icon: SiReact, color: "text-cyan-400" },
+    { name: "Figma", icon: SiFigma, color: "text-pink-500" },
+    { name: "Canva", icon: SiCanva, color: "text-teal-400" },
+  ],
+  
+  learning: [
+    { name: "React", icon: SiReact, color: "text-cyan-400" }, 
+    { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+    { name: "Node.js", icon: SiNodedotjs, color: "text-green-600" },
+    { name: "Express", icon: SiExpress, color: "text-gray-400" },
+    { name: "PostgreSQL", icon: SiPostgresql, color: "text-blue-400" },
+    { name: "React Native", icon: SiReact, color: "text-cyan-400" }
+  ]
+};

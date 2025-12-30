@@ -4,7 +4,7 @@ import niko from '../assets/niko.jpeg';
 
 const Hero = () => {
     return (
-        <section id="me" className="h-screen flex flex-col-reverse md:flex-row items-center justify-between gap-10 py-10 md:py-0">
+        <section id="me" className="h-screen flex flex-col-reverse md:flex-row items-center justify-between gap-5 py-10 md:py-0">
             <div className='flex flex-col items-start gap-4 md:w-3/5'>
                 <h1 className="text-3xl md:text-5xl font-bold leading-tight">
                     Hi there! <br /> 
@@ -18,8 +18,11 @@ const Hero = () => {
                     className="text-blue-500"
                     />
                 </div>
-                <p className="text-gray-400 leading-relaxed text-base md:text-lg max-w-lg">
+                <p className="text-gray-400 leading-relaxed text-base md:text-lg">
                     {personal.description}
+                </p>
+                <p className="text-white leading-relaxed text-base md:text-lg">
+                    {personal.currently}
                 </p>
                 <a 
                     href="/resume.pdf" 

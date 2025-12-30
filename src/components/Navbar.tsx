@@ -6,7 +6,7 @@ const Navbar = () => {
 
     return (
         <nav className="fixed w-full z-50 top-0 start-0 backdrop-blur-sm">
-            <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4 mt-5 border-b-2 rounded-2xl">
+            <div className="max-w-7xl flex flex-wrap items-center justify-between mx-auto p-4 mt-5 border-b-2 rounded-2xl shadow-[0_0_35px_rgba(59,130,246,0.6)]">
                 
                 <a href="#" className="space-x-3 rtl:space-x-reverse transition-transform duration-300 hover:scale-110 hover:text-blue-500">
                     <span className="font-poppins text-2xl font-bold whitespace-nowrap">

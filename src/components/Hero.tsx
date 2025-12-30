@@ -1,6 +1,7 @@
 import TextType from './TextType';
 import { personal } from '../data/index';
 import niko from '../assets/niko.jpeg';
+import { Download } from "lucide-react";
 
 const Hero = () => {
     return (
@@ -27,12 +28,13 @@ const Hero = () => {
                 <a 
                     href="/resume.pdf" 
                     download="nikohoc_resume.pdf" 
-                    className="w-fit flex items-center gap-2 bg-white text-slate-900 px-6 py-3 rounded-full font-bold font-poppins shadow-lg shadow-white/20           
-                        transition-all duration-300       
-                        hover:scale-105 hover:bg-gray-100  
-                        active:scale-95"
-                    >
-                    <span>My Resume ⬇</span>
+                    className="group w-fit flex items-center gap-3 bg-white text-slate-900 px-6 py-3 rounded-full font-bold font-poppins shadow-lg shadow-white/20 transition-all duration-300 hover:scale-105 hover:bg-gray-100 active:scale-95"
+                >
+                    <Download 
+                        size={20} 
+                        className="stroke-[3px] transition-transform duration-300 group-hover:-translate-y-1" 
+                    />
+                    <span>My Resume</span>
                 </a>
             </div>
             <div className="md:w-2/5 flex justify-center md:justify-end">

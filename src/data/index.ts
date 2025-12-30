@@ -1,8 +1,13 @@
 import { 
   SiHtml5, SiCss3, SiJavascript, SiPhp, SiLaravel, 
   SiKotlin, SiMysql, SiReact, SiNextdotjs, SiNodedotjs, 
-  SiExpress, SiPostgresql, SiFigma, SiCanva
+  SiExpress, SiPostgresql, SiFigma, SiCanva, SiTailwindcss
 } from "react-icons/si";
+
+import project1 from '../assets/project-1.png';
+import project2 from '../assets/project-2.jpg';
+import project3 from '../assets/project-3.png';
+import project4 from '../assets/project-4.jpg';
 
 export const navLinks = [
     { name: "Me", href: "me" },
@@ -39,11 +44,12 @@ export const journey = [
     {
         id: 1,
         yearRange: "2019 - 2022",
-        title: "Senior High School, SMAK Kolese Santo Yusup Malang",
+        title: "Senior High School, SMAK Kolese Santo Yusup",
         location: "Malang, Indonesia",
         description: [
-            "Majoring in science and mathematics.", 
-            "Graduated with grade 89.49/100.",
+            "Majored in Mathematics and Natural Sciences (MIPA), graduating with a solid average of 89.49/100.",
+            "Built a strong foundation in analytical thinking and scientific principles for higher education.",
+            "Developed independence, discipline, and adaptability through 3 years of dormitory living."
         ]
     },
     {
@@ -52,8 +58,9 @@ export const journey = [
         title: "University, Petra Christian University",
         location: "Surabaya, Indonesia",
         description: [
-            "Majoring in Informatics, currently in 3rd year with 3.54 GPA.", 
-            "Learned programming basics, data structures, algorithms, web development, and databases.",
+            "Informatics Student (3rd Year) with a current GPA of 3.54/4.00.",
+            "Gained a comprehensive understanding of Computer Science fundamentals, from algorithms, data structures, system design, and building project such as web apps or application.",
+            "Specializing in Fullstack Web Development (building scalable web apps) and Database Management."
         ]
     },
     {
@@ -62,9 +69,9 @@ export const journey = [
         title: "Adroid Developer, Bangkit Academy",
         location: "Remote",
         description: [
-            "Learned Android Development using Android Studio and Kotlin.",
-            "Learned soft skills needed for the working industries through ILT sessions.",
-            "Collabed with students from different university for capstone project.",
+            "Completed an intensive learning path in Android Development using Kotlin.",
+            "Collaborated with a cross-university team to manage and deliver a comprehensive Capstone Project.",
+            "Honed essential industry soft skills including project management, communication, and adaptability."
         ]
     }
 ];
@@ -72,28 +79,52 @@ export const journey = [
 export const projects = [
   {
     id: 1,
-    title: "E-Commerce Web",
-    desc: "Aplikasi jual beli dengan fitur payment gateway.",
-    image: "/path/to/image.png",
-    tools: ["React", "NodeJS", "MongoDB"],
+    title: "Gereja Katolik Gembala Yang Baik Surabaya",
+    desc: "Official website for GYB Catholic Church Surabaya, created to help spread church information to people.",
+    image: project1,
+    tools: ["Laravel", "PHP", "Tailwind CSS", "MySql"],
+    link: "https://parokigyb.or.id/"
+  },
+  {
+    id: 2,
+    title: "Nourish - Stunting Application",
+    desc: "A Bangkit Academy Capstone Project built by a cross-university team. As the Mobile Developer, I integrated the Android app with Cloud REST APIs and Machine Learning models to effectively detect and monitor stunting levels.",
+    image: project2,
+    tools: ["Kotlin", "Cloud", "ML Model"],
+    link: "https://github.com/Stunting-Detection-App"
+  },
+    {
+    id: 3,
+    title: "Easy Kos",
+    desc: "A comprehensive boarding house management system for my class final project serving admins, owners, and tenants. Features a seamless payment gateway integration via Midtrans and a modern, responsive UI built with DaisyUI.",
+    image: project3,
+    tools: ["Laravel", "PHP", "Tailwind CSS", "DaisyUI", "MySql", "Midtrans"],
+    link: "https://github.com/NikoHoc/easy-kos"
+  },
+    {
+    id: 4,
+    title: "Mocktify",
+    desc: "A fully functional Spotify clone web application for my class final project. Build using Next.js and Supabase, featuring music playback using the official Spotify Web API.",
+    image: project4,
+    tools: ["Next Js", "Tailwind CSS", "Supabase", "Spotify Web API"],
+    link: "https://github.com/NikoHoc/mocktify"
   },
 ];
-
 
 export const toolsData = {
   used: [
     { name: "HTML5", icon: SiHtml5, color: "text-orange-600" },
     { name: "CSS3", icon: SiCss3, color: "text-blue-600" },
     { name: "JavaScript", icon: SiJavascript, color: "text-yellow-400" },
-    { name: "PHP", icon: SiPhp, color: "text-purple-700" },
+    { name: "PHP", icon: SiPhp, color: "text-indigo-500" },
     { name: "Laravel", icon: SiLaravel, color: "text-red-600" },
+    { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-cyan-400" },
     { name: "Kotlin", icon: SiKotlin, color: "text-purple-600" },
     { name: "MySQL", icon: SiMysql, color: "text-blue-500" },
     { name: "React", icon: SiReact, color: "text-cyan-400" },
-    { name: "Figma", icon: SiFigma, color: "text-pink-500" },
+    { name: "Figma", icon: SiFigma, color: "text-rose-500" }, 
     { name: "Canva", icon: SiCanva, color: "text-teal-400" },
   ],
-  
   learning: [
     { name: "React", icon: SiReact, color: "text-cyan-400" }, 
     { name: "Next.js", icon: SiNextdotjs, color: "text-white" },

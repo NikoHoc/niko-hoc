@@ -2,8 +2,11 @@ import { toolsData } from "../data/index";
 const Tool = () => {
     return (
         <section id="tools" className="py-20 flex flex-col items-center gap-12">
-            <div className="border-b-2 pb-2">
-                <h1 className="font-poppins font-bold text-4xl text-white">Tools & Tech</h1>
+            <div className="flex flex-col items-center mb-12">
+                <h1 className="font-poppins font-bold text-4xl text-white mb-4">
+                    Tools & Tech Stack
+                </h1>
+                <div className="h-0.5 w-50 bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] rounded-full"></div>
             </div>
             <div className="w-full px-4">
                 <div className="flex flex-col gap-6 mb-10">

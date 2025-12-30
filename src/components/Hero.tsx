@@ -5,7 +5,8 @@ import { Download } from "lucide-react";
 
 const Hero = () => {
     return (
-        <section id="me" className="h-screen flex flex-col-reverse md:flex-row items-center justify-between gap-5 py-10 md:py-0">
+        // min-h-screen md:h-screen flex flex-col md:flex-row items-center justify-center gap-10 px-4 pt-32 pb-10 md:py-0
+        <section id="me" className="min-h-screen md:h-screen flex flex-col-reverse md:flex-row items-center justify-between gap-5 py-10 md:py-0 md:pt-0 pt-25">
             <div className='flex flex-col items-start gap-4 md:w-3/5'>
                 <h1 className="text-3xl md:text-5xl font-bold leading-tight">
                     Hi there! <br /> 

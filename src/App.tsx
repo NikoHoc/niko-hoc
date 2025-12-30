@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <main className="md:pt-0 pt-20 px-4 max-w-screen-xl mx-auto">
+      <main className="md:pt-0 px-4 max-w-7xl mx-auto">
         <Hero />
         <Journey />
         <Project />

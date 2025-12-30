@@ -24,16 +24,17 @@ const Footer = () => {
                 </div>
 
                 <div className="flex gap-6 text-sm font-medium">
-                    {navLinks.map((nav) => (
-                        <a href={`#${nav.href}`} className="hover:text-blue-500 transition-transform duration-200 hover:scale-120">
+                    {navLinks.map((nav, index) => (
+                        <a key={index} href={`#${nav.href}`} className="hover:text-blue-500 transition-transform duration-200 hover:scale-120">
                             {nav.name}
                         </a>
                     ))}
                 </div>
 
                 <div className="flex gap-4">
-                    {socialLinks.map((social) => (
+                    {socialLinks.map((social, index) => (
                         <a
+                        key={index}
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"

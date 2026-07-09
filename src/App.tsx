@@ -1,6 +1,7 @@
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
+import About from "./components/About";
 import Journey from "./components/Journey";
 import Navbar from "./components/Navbar";
 import Project from "./components/Project";
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <main className="md:pt-0 px-4 max-w-7xl mx-auto">
         <Hero />
+        <About />
         <Journey />
         <Project />
         <Tools />

@@ -14,7 +14,8 @@ import project4 from '../assets/project-4.jpg';
 import projectSkripsi from '../assets/project-skripsi.png'
 
 export const navLinks = [
-    { name: "Me", href: "me" },
+    { name: "Home", href: "home" },
+    { name: "About", href: "about" },
     { name: "Journey", href: "journey" },
     { name: "Projects", href: "projects" },
     { name: "Tools", href: "tools" },
@@ -33,10 +34,17 @@ export const personal = {
     ],
     currently: "Actively seeking full-time opportunities & open to collaborations.",
     briefDescription: "Building innovative web and mobile systems to solve real-world business challenges.",
-    description: "As a Software Engineer and Informatics graduate from Petra Christian University, I am deeply passionate about translating complex operational bottlenecks into streamlined digital solutions. I thrive on diving into unique problems and building custom web, system, or mobile applications that tackle these challenges head-on. For me, software engineering is more than just writing code; it's about delivering impactful, user-centric tools that make everyday operations more efficient and intuitive. Beyond software development, I am also an active trader and am always thrilled to connect and swap ideas about the market.",
+    description: "I am a Software Engineer and an Informatics graduate from Petra Christian University, specializing in Fullstack Web and Mobile Development. Experienced in system design and building user-friendly applications that effectively solve real-world problems, utilizing AI to create modern and innovative systems.",
+    location: "Surabaya, Indonesia",
+    university: "Petra Christian University",
+    interests: [
+        "Developing effective digital solutions, whether its web, mobile, or complex management systems, to resolve real-world problems.",
+        "Collaborating with diverse teams and remaining highly adaptable to explore and master new technologies as project demands.",
+        "Interested in the financial market and always open to discuss about investing or trading strategies."
+    ],
     contact: {
         headline: "Got an Idea? Let's Talk!",
-        description: "Open for new opportunities and collaborations. Have a project in mind? Let's build something amazing together!\nP.S. Always open to chat about coding, market conditions, trading, and investing.",
+        description: "Open for new opportunities and collaborations. Have a project in mind? Let's build something amazing together!\nP.S. Always open to chat about coding, market conditions, or trading, and investing.",
         phone: "+62 812-5702-6600",
         location: "Surabaya, Indonesia"
     },

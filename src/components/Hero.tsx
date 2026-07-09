@@ -5,15 +5,13 @@ import { ArrowRight, Mail } from "lucide-react";
 
 const Hero = () => {
     return (
-        <section id="me" className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-5 py-20 md:py-0 pt-28 md:pt-0">
-            {/* Bagian Teks (Kiri) */}
+        <section id="home" className="min-h-screen flex flex-col-reverse md:flex-row items-center justify-between gap-10 md:gap-5 py-20 md:py-0 pt-28 md:pt-0">
             <div className='flex flex-col items-center md:items-start text-center md:text-left gap-6 md:w-3/5'>
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white">
                     Hi there! <br /> 
                     <span className="text-blue-500">{personal.nickname}</span> Here 👋
                 </h1>
-                
-                {/* Fix Layout Flex Wrap agar tidak terhimpit */}
+
                 <div className="text-xl sm:text-2xl md:text-3xl font-semibold flex flex-wrap justify-center md:justify-start items-center gap-x-2 gap-y-1 text-gray-300">
                     <span className="whitespace-nowrap shrink-0">I am a</span>
                     <TextType
@@ -22,13 +20,11 @@ const Hero = () => {
                         className="text-blue-500"
                     />
                 </div>
-                
-                {/* Deskripsi Singkat */}
+
                 <p className="text-gray-400 leading-relaxed text-base md:text-xl max-w-xl">
                     {personal.briefDescription}
                 </p>
-                
-                {/* Area Tombol */}
+
                 <div className="flex flex-col sm:flex-row gap-4 mt-2 w-full sm:w-auto px-4 sm:px-0">
                     <a 
                         href="#projects" 
@@ -46,8 +42,6 @@ const Hero = () => {
                     </a>
                 </div>
             </div>
-
-            {/* Bagian Foto (Kanan) */}
             <div className="md:w-2/5 flex justify-center md:justify-end mb-8 md:mb-0">
                 <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96">
                     <img 

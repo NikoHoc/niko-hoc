@@ -5,10 +5,13 @@ const Journey = () => {
     return (
         <section id="journey" className="py-20 flex flex-col items-start max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
             <div className="flex flex-col items-start w-full mb-12">
-                <h1 className="font-poppins font-bold text-4xl text-white mb-4 text-left">
+                <h1 className="font-poppins font-bold text-4xl text-white mb-2 text-left">
                     Journey
                 </h1>
                 <div className="h-0.5 w-24 bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] rounded-full"></div>
+                <p className="text-sm mt-3 text-left italic text-gray-400 font-mono">
+                    // My journey so far...
+                </p>
             </div>
 
             <div className="w-full relative">

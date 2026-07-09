@@ -31,7 +31,7 @@ const Contact = () => {
     return (
         <section id="contact" className="py-20 flex flex-col items-start gap-8 max-w-7xl mx-auto w-full">
             <div className="flex flex-col items-start w-full">
-                <h1 className="font-poppins font-bold text-4xl text-white mb-4">
+                <h1 className="font-poppins font-bold text-4xl text-white mb-2">
                     Contact
                 </h1>
                 <div className="h-0.5 w-24 bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] rounded-full mb-6"></div>

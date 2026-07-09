@@ -1,4 +1,4 @@
-import { personal, navLinks } from "../data";
+import { personal } from "../data";
 import { Github, Instagram, Linkedin, Mail } from "lucide-react";
 
 const Footer = () => { 
@@ -12,36 +12,29 @@ const Footer = () => {
     ];
 
     return (
-        <footer id="footer" className="bg-neutral-950 text-gray-400 border-neutral-800">
-            <div className="mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-                <div className="text-center md:text-left">
+        <footer id="footer" className="bg-neutral-950 text-gray-400 border-t border-neutral-900 py-8 mt-10">
+            <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="flex-1 flex justify-center md:justify-start">
                     <h2 className="text-xl font-bold text-white font-poppins">
                         {personal.nickname}
                     </h2>
-                    <p className="text-sm mt-1">
+                </div>
+                <div className="flex-1 flex justify-center text-center">
+                    <p className="text-sm">
                         © {year} All rights reserved.
                     </p>
                 </div>
-
-                <div className="flex gap-6 text-sm font-medium">
-                    {navLinks.map((nav, index) => (
-                        <a key={index} href={`#${nav.href}`} className="hover:text-blue-500 transition-transform duration-200 hover:scale-120">
-                            {nav.name}
-                        </a>
-                    ))}
-                </div>
-
-                <div className="flex gap-4">
+                <div className="flex-1 flex justify-center md:justify-end gap-4">
                     {socialLinks.map((social, index) => (
                         <a
-                        key={index}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={social.label}
-                        className="p-2 rounded-full bg-neutral-900 border border-neutral-800 hover:bg-white hover:text-black hover:scale-110 transition-all duration-300"
+                            key={index}
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={social.label}
+                            className="p-2 rounded-full bg-neutral-900 border border-neutral-800 hover:bg-white hover:text-black hover:scale-110 transition-all duration-300"
                         >
-                        {social.icon}
+                            {social.icon}
                         </a>
                     ))}
                 </div>

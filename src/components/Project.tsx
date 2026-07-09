@@ -81,12 +81,15 @@ const Project = () => {
     };
 
     return (
-        <section id="projects" className="py-20 flex flex-col items-start gap-8 max-w-7xl mx-auto w-full px-4">
+        <section id="projects" className="py-20 flex flex-col items-start gap-4 max-w-7xl mx-auto w-full px-4">
             <div className="flex flex-col items-start w-full mb-2">
-                <h1 className="font-poppins font-bold text-4xl text-white mb-4 text-left">
+                <h1 className="font-poppins font-bold text-4xl text-white mb-2 text-left">
                     Projects
                 </h1>
                 <div className="h-0.5 w-24 bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)] rounded-full"></div>
+                <p className="text-sm mt-3 text-left italic text-gray-400 font-mono">
+                    // My recent works...
+                </p>
             </div>
 
             <div className="relative w-full">

@@ -22,7 +22,7 @@ const Tool = () => {
                     {toolsData.map((tool, index) => (
                         <div 
                             key={index} 
-                            className="group relative flex-shrink-0 w-64 sm:w-auto flex flex-row items-center p-4 bg-neutral-900 border border-neutral-800 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/20 snap-center"
+                            className="group relative shrink-0 w-64 sm:w-auto flex flex-row items-center p-4 bg-neutral-900 border border-neutral-800 rounded-xl transition-all duration-300 hover:-translate-y-2 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/20 snap-center"
                         >
                             {tool.isFavorite && (
                                 <FaStar className="absolute top-3 right-3 text-yellow-500 text-xs opacity-80" />

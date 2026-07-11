@@ -15,7 +15,7 @@ const Journey = () => {
             </div>
 
             <div className="w-full relative">
-                <div className="absolute left-[19px] md:left-1/2 md:-translate-x-1/2 top-4 bottom-4 w-0.5 bg-neutral-800"></div>
+                <div className="absolute left-4.75 md:left-1/2 md:-translate-x-1/2 top-4 bottom-4 w-0.5 bg-neutral-800"></div>
                 
                 <div className="flex flex-col gap-8 md:gap-12">
                     {journey.map((item, index) => {
@@ -29,7 +29,7 @@ const Journey = () => {
                                 
                                 <div className="hidden md:block w-1/2"></div>
 
-                                <div className="absolute left-0 top-4 md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 z-10 flex-shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-neutral-900 border-2 border-neutral-700 hover:border-blue-500 transition-colors duration-300 shadow-lg group">
+                                <div className="absolute left-0 top-4 md:top-1/2 md:-translate-y-1/2 md:left-1/2 md:-translate-x-1/2 z-10 shrink-0 flex items-center justify-center w-10 h-10 rounded-full bg-neutral-900 border-2 border-neutral-700 hover:border-blue-500 transition-colors duration-300 shadow-lg group">
                                     {item.title.toLowerCase().includes("school") || item.title.toLowerCase().includes("university") || item.title.toLowerCase().includes("graduate") ? (
                                         <GraduationCap size={18} className="text-gray-400 group-hover:text-blue-400 transition-colors" />
                                     ) : (

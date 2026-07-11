@@ -95,7 +95,7 @@ const Contact = () => {
                 <div className="lg:col-span-2 flex flex-col gap-4 justify-between h-full">
                     <div className="group flex items-center justify-between p-4 sm:p-5 bg-neutral-900 border border-neutral-800 rounded-xl transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10">
                         <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-neutral-950 text-blue-500 border border-neutral-800 group-hover:scale-110 transition-transform">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 flex items-center justify-center rounded-full bg-neutral-950 text-blue-500 border border-neutral-800 group-hover:scale-110 transition-transform">
                                 <Mail size={20} />
                             </div>
                             <div className="flex flex-col min-w-0">
@@ -105,7 +105,7 @@ const Contact = () => {
                         </div>
                         <button 
                             onClick={() => handleCopy(personal.socials.email_address, 'email')}
-                            className="p-2 ml-2 flex-shrink-0 text-gray-400 hover:text-white bg-neutral-950 border border-neutral-800 rounded-lg transition-colors"
+                            className="p-2 ml-2 shrink-0 text-gray-400 hover:text-white bg-neutral-950 border border-neutral-800 rounded-lg transition-colors"
                             aria-label="Copy Email"
                         >
                             {copiedItem === 'email' ? <Check size={18} className="text-green-500" /> : <Copy size={18} />}
@@ -113,7 +113,7 @@ const Contact = () => {
                     </div>
                     <div className="group flex items-center justify-between p-4 sm:p-5 bg-neutral-900 border border-neutral-800 rounded-xl transition-all duration-300 hover:border-green-500/50 hover:shadow-lg hover:shadow-green-500/10">
                         <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-neutral-950 text-green-500 border border-neutral-800 group-hover:scale-110 transition-transform">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 flex items-center justify-center rounded-full bg-neutral-950 text-green-500 border border-neutral-800 group-hover:scale-110 transition-transform">
                                 <Phone size={20} />
                             </div>
                             <div className="flex flex-col min-w-0">
@@ -123,7 +123,7 @@ const Contact = () => {
                         </div>
                         <button 
                             onClick={() => handleCopy(personal.contact.phone, 'phone')}
-                            className="p-2 ml-2 flex-shrink-0 text-gray-400 hover:text-white bg-neutral-950 border border-neutral-800 rounded-lg transition-colors"
+                            className="p-2 ml-2 shrink-0 text-gray-400 hover:text-white bg-neutral-950 border border-neutral-800 rounded-lg transition-colors"
                             aria-label="Copy Phone"
                         >
                             {copiedItem === 'phone' ? <Check size={18} className="text-green-500" /> : <Copy size={18} />}
@@ -131,7 +131,7 @@ const Contact = () => {
                     </div>
                     <div className="group flex items-center p-4 sm:p-5 bg-neutral-900 border border-neutral-800 rounded-xl transition-all duration-300 hover:border-red-500/50 hover:shadow-lg hover:shadow-red-500/10">
                         <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
-                            <div className="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-neutral-950 text-red-500 border border-neutral-800 group-hover:scale-110 transition-transform">
+                            <div className="w-10 h-10 sm:w-12 sm:h-12 shrink-0 flex items-center justify-center rounded-full bg-neutral-950 text-red-500 border border-neutral-800 group-hover:scale-110 transition-transform">
                                 <MapPin size={20} />
                             </div>
                             <div className="flex flex-col min-w-0">
@@ -149,7 +149,7 @@ const Contact = () => {
                             <a href={personal.socials.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full bg-neutral-950 text-blue-500 border border-neutral-800 hover:text-white hover:border-blue-500 hover:bg-blue-600 transition-all hover:scale-110">
                                 <Linkedin size={20} />
                             </a>
-                            <a href={personal.socials.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full bg-neutral-950 text-pink-500 border border-neutral-800 hover:text-white hover:border-pink-500 hover:bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 transition-all hover:scale-110">
+                            <a href={personal.socials.instagram} target="_blank" rel="noreferrer" aria-label="Instagram" className="w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full bg-neutral-950 text-pink-500 border border-neutral-800 hover:text-white hover:border-pink-500 hover:bg-linear-to-tr from-yellow-400 via-pink-500 to-purple-500 transition-all hover:scale-110">
                                 <Instagram size={20} />
                             </a>
                         </div>

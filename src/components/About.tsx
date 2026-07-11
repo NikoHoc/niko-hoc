@@ -35,7 +35,7 @@ const About = () => {
 
                 <div className="w-full lg:w-2/5 flex flex-col gap-3">
                     <h3 className="text-2xl font-bold text-white">My Profile</h3>
-                    <div className="bg-neutral-900 border border-neutral-800 rounded-3xl p-6 shadow-lg hover:border-blue-500/50 transition-colors duration-300 flex flex-col flex-grow">
+                    <div className="bg-neutral-900 border border-neutral-800 rounded-3xl p-6 shadow-lg hover:border-blue-500/50 transition-colors duration-300 flex flex-col grow">
                         <div className="w-full aspect-square rounded-2xl overflow-hidden mb-8 border-2 border-neutral-800 shrink-0">
                             <img 
                                 src={niko} 
@@ -99,8 +99,8 @@ const About = () => {
                 </div>
             </div>
             <div className="w-full mt-4 bg-neutral-900 border border-neutral-800 rounded-2xl py-3 overflow-hidden relative">
-                <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-neutral-900 to-transparent z-10"></div>
-                <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-neutral-900 to-transparent z-10"></div>
+                <div className="absolute inset-y-0 left-0 w-16 bg-linear-to-r from-neutral-900 to-transparent z-10"></div>
+                <div className="absolute inset-y-0 right-0 w-16 bg-linear-to-l from-neutral-900 to-transparent z-10"></div>
                 
                 <div className="animate-marquee flex items-center gap-8">
                     {marqueeItems.map((tool, index) => (

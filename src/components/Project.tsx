@@ -98,7 +98,7 @@ const Project = () => {
                     <button 
                         onClick={scrollPrev}
                         disabled={isAtStart}
-                        className={`hidden md:flex flex-shrink-0 z-10 p-3 rounded-full bg-neutral-900 border shadow-xl transition-all duration-300 active:scale-95 ${isAtStart ? 'border-neutral-800 opacity-40 cursor-not-allowed' : 'border-neutral-700 hover:bg-neutral-800 hover:text-blue-500 hover:scale-110 hover:border-blue-500'}`}
+                        className={`hidden md:flex shrink-0 z-10 p-3 rounded-full bg-neutral-900 border shadow-xl transition-all duration-300 active:scale-95 ${isAtStart ? 'border-neutral-800 opacity-40 cursor-not-allowed' : 'border-neutral-700 hover:bg-neutral-800 hover:text-blue-500 hover:scale-110 hover:border-blue-500'}`}
                         aria-label="Previous Project"
                     >
                         <ChevronLeft size={24} className="text-white" />
@@ -118,7 +118,7 @@ const Project = () => {
                                 <div 
                                     key={project.id} 
                                     ref={(el) => { cardRefs.current[index] = el; }}
-                                    className="group relative bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden flex flex-col hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 snap-center md:snap-start flex-shrink-0 w-full md:w-[calc(50%-0.75rem)]"
+                                    className="group relative bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden flex flex-col hover:border-blue-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10 snap-center md:snap-start shrink-0 w-full md:w-[calc(50%-0.75rem)]"
                                 >
                                     <div className="relative h-56 w-full overflow-hidden shrink-0">
                                         <img 
@@ -129,7 +129,7 @@ const Project = () => {
                                                 (e.target as HTMLImageElement).src = "https://placehold.co/600x400/1a1a1a/FFF?text=No+Image";
                                             }}
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent opacity-60"></div>
+                                        <div className="absolute inset-0 bg-linear-to-t from-neutral-900 to-transparent opacity-60"></div>
                                     </div>
 
                                     <div className="p-6 flex flex-col grow">
@@ -187,7 +187,7 @@ const Project = () => {
                     <button 
                         onClick={scrollNext}
                         disabled={isAtEnd}
-                        className={`hidden md:flex flex-shrink-0 z-10 p-3 rounded-full bg-neutral-900 border shadow-xl transition-all duration-300 active:scale-95 ${isAtEnd ? 'border-neutral-800 opacity-40 cursor-not-allowed' : 'border-neutral-700 hover:bg-neutral-800 hover:text-blue-500 hover:scale-110 hover:border-blue-500'}`}
+                        className={`hidden md:flex shrink-0 z-10 p-3 rounded-full bg-neutral-900 border shadow-xl transition-all duration-300 active:scale-95 ${isAtEnd ? 'border-neutral-800 opacity-40 cursor-not-allowed' : 'border-neutral-700 hover:bg-neutral-800 hover:text-blue-500 hover:scale-110 hover:border-blue-500'}`}
                         aria-label="Next Project"
                     >
                         <ChevronRight size={24} className="text-white" />
@@ -237,7 +237,7 @@ const Project = () => {
                                     (e.target as HTMLImageElement).src = "https://placehold.co/800x400/1a1a1a/FFF?text=No+Image";
                                 }}
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent"></div>
+                            <div className="absolute inset-0 bg-linear-to-t from-neutral-900 via-transparent to-transparent"></div>
                         </div>
 
                         <div className="p-6 sm:p-8 overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>

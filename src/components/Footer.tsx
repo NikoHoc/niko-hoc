@@ -12,7 +12,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer id="footer" className="bg-neutral-950 text-gray-400 border-t border-neutral-900 py-8 mt-10">
+        <footer id="footer" className="w-full bg-neutral-950 text-gray-400 border-t border-neutral-900 py-8 mt-10">
             <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
                 <div className="flex-1 flex justify-center md:justify-start">
                     <h2 className="text-xl font-bold text-white font-poppins">

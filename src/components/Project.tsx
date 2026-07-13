@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { projects } from "../data/index"; 
 import { ExternalLink, FolderGit2, ChevronLeft, ChevronRight, X } from "lucide-react";
+import { motion, type Variants, AnimatePresence } from "framer-motion";
 
 type ProjectType = typeof projects[0];
 
@@ -13,7 +14,6 @@ const Project = () => {
     const [maxReachableIndex, setMaxReachableIndex] = useState(0);
 
     const [modalData, setModalData] = useState<ProjectType | null>(null);
-    const [isModalVisible, setIsModalVisible] = useState(false);
 
     const updateScrollBounds = () => {
         if (!carouselRef.current) return;
@@ -55,6 +55,7 @@ const Project = () => {
         window.addEventListener("resize", updateScrollBounds);
         return () => window.removeEventListener("resize", updateScrollBounds);
     }, []);
+
     const scrollToIndex = (index: number) => {
         const clampedIndex = Math.max(0, Math.min(index, maxReachableIndex));
         const card = cardRefs.current[clampedIndex];
@@ -65,24 +66,36 @@ const Project = () => {
 
     const scrollPrev = () => scrollToIndex(currentIndex - 1);
     const scrollNext = () => scrollToIndex(currentIndex + 1);
-
     const scrollToDot = (index: number) => scrollToIndex(index);
 
+    // KODE JAUH LEBIH BERSIH TANPA SETTIMEOUT
     const openModal = (project: ProjectType) => {
         setModalData(project);
         document.body.style.overflow = 'hidden'; 
-        setTimeout(() => setIsModalVisible(true), 10); 
     };
 
     const closeModal = () => {
-        setIsModalVisible(false);
+        setModalData(null);
         document.body.style.overflow = 'unset';
-        setTimeout(() => setModalData(null), 300);
+    };
+
+    // Variants Animasi Scroll
+    const fadeUpVariants: Variants = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
     };
 
     return (
-        <section id="projects" className="py-20 flex flex-col items-start gap-4 max-w-7xl mx-auto w-full px-4">
-            <div className="flex flex-col items-start w-full mb-2">
+        <section id="projects" className="py-20 flex flex-col items-start gap-4 max-w-7xl mx-auto w-full px-4 overflow-hidden">
+            
+            {/* HEADER ANIMASI */}
+            <motion.div 
+                className="flex flex-col items-start w-full mb-2"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px 0px 0px 0px" }}
+                variants={fadeUpVariants}
+            >
                 <h1 className="font-poppins font-bold text-4xl text-white mb-2 text-left">
                     Projects
                 </h1>
@@ -90,9 +103,16 @@ const Project = () => {
                 <p className="text-sm mt-3 text-left italic text-gray-400 font-mono">
                     // My recent works...
                 </p>
-            </div>
+            </motion.div>
 
-            <div className="relative w-full">
+            {/* PEMBUNGKUS CAROUSEL ANIMASI */}
+            <motion.div 
+                className="relative w-full"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-50px 0px 0px 0px" }}
+                variants={fadeUpVariants}
+            >
                 
                 <div className="flex items-center w-full gap-4 lg:gap-8">
                     <button 
@@ -129,7 +149,7 @@ const Project = () => {
                                                 (e.target as HTMLImageElement).src = "https://placehold.co/600x400/1a1a1a/FFF?text=No+Image";
                                             }}
                                         />
-                                        <div className="absolute inset-0 bg-linear-to-t from-neutral-900 to-transparent opacity-60"></div>
+                                        <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent opacity-60"></div>
                                     </div>
 
                                     <div className="p-6 flex flex-col grow">
@@ -192,7 +212,6 @@ const Project = () => {
                     >
                         <ChevronRight size={24} className="text-white" />
                     </button>
-
                 </div>
 
                 <div className="md:hidden flex items-center justify-between mt-4 w-full px-2">
@@ -211,78 +230,88 @@ const Project = () => {
                         />
                     ))}
                 </div>
-            </div>
+            </motion.div>
 
-            {modalData && (
-                <div 
-                    className={`fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm transition-opacity duration-300 ${isModalVisible ? 'opacity-100' : 'opacity-0'}`}
-                >
-                    <div 
-                        className={`relative bg-neutral-900 border border-neutral-800 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col shadow-2xl transition-all duration-300 transform ${isModalVisible ? 'scale-100 translate-y-0' : 'scale-95 translate-y-8'}`}
+            {/* MODAL MENGGUNAKAN ANIMATEPRESENCE & FRAMER MOTION */}
+            <AnimatePresence>
+                {modalData && (
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
                     >
-
-                        <button 
-                            onClick={closeModal}
-                            className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-red-500 text-white rounded-full transition-colors backdrop-blur-md"
+                        <motion.div 
+                            initial={{ scale: 0.95, y: 30, opacity: 0 }}
+                            animate={{ scale: 1, y: 0, opacity: 1 }}
+                            exit={{ scale: 0.95, y: 30, opacity: 0 }}
+                            transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
+                            className="relative bg-neutral-900 border border-neutral-800 rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-hidden flex flex-col shadow-2xl"
                         >
-                            <X size={20} />
-                        </button>
 
-                        <div className="w-full h-48 sm:h-64 shrink-0 relative">
-                            <img 
-                                src={modalData.image} 
-                                alt={modalData.title} 
-                                className="w-full h-full object-cover"
-                                onError={(e) => {
-                                    (e.target as HTMLImageElement).src = "https://placehold.co/800x400/1a1a1a/FFF?text=No+Image";
-                                }}
-                            />
-                            <div className="absolute inset-0 bg-linear-to-t from-neutral-900 via-transparent to-transparent"></div>
-                        </div>
-
-                        <div className="p-6 sm:p-8 overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>
-                            <h2 className="text-2xl sm:text-3xl font-bold text-white font-poppins mb-1">
-                                {modalData.title}
-                            </h2>
-                            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6">
-                                <span className="text-blue-500 font-semibold uppercase tracking-wide text-sm">
-                                    {modalData.subtitle}
-                                </span>
-                                <span className="hidden sm:block text-neutral-600">•</span>
-                                <span className="text-gray-400 text-sm font-medium">{modalData.date}</span>
-                            </div>
-
-                            <h4 className="text-white font-semibold mb-2">Overview</h4>
-                            <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8 whitespace-pre-line">
-                                {modalData.description}
-                            </p>
-
-                            <h4 className="text-white font-semibold mb-3">Technologies Used</h4>
-                            <div className="flex flex-wrap gap-2 mb-6">
-                                {modalData.tools.map((tool, index) => (
-                                    <span 
-                                        key={index} 
-                                        className="px-3 py-1.5 text-xs sm:text-sm font-medium bg-neutral-800 text-gray-200 rounded-lg border border-neutral-700"
-                                    >
-                                        {tool}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="p-6 border-t border-neutral-800 bg-neutral-900/90 backdrop-blur-md shrink-0">
-                            <a 
-                                href={modalData.link} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="flex items-center justify-center gap-2 w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all active:scale-[0.98]"
+                            <button 
+                                onClick={closeModal}
+                                className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-red-500 text-white rounded-full transition-colors backdrop-blur-md"
                             >
-                                {modalData.link.includes("github") ? <FolderGit2 size={18} /> : <ExternalLink size={18} />}
-                                Visit Project
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            )}
+                                <X size={20} />
+                            </button>
+
+                            <div className="w-full h-48 sm:h-64 shrink-0 relative">
+                                <img 
+                                    src={modalData.image} 
+                                    alt={modalData.title} 
+                                    className="w-full h-full object-cover"
+                                    onError={(e) => {
+                                        (e.target as HTMLImageElement).src = "https://placehold.co/800x400/1a1a1a/FFF?text=No+Image";
+                                    }}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-transparent"></div>
+                            </div>
+
+                            <div className="p-6 sm:p-8 overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>
+                                <h2 className="text-2xl sm:text-3xl font-bold text-white font-poppins mb-1">
+                                    {modalData.title}
+                                </h2>
+                                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-6">
+                                    <span className="text-blue-500 font-semibold uppercase tracking-wide text-sm">
+                                        {modalData.subtitle}
+                                    </span>
+                                    <span className="hidden sm:block text-neutral-600">•</span>
+                                    <span className="text-gray-400 text-sm font-medium">{modalData.date}</span>
+                                </div>
+
+                                <h4 className="text-white font-semibold mb-2">Overview</h4>
+                                <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-8 whitespace-pre-line">
+                                    {modalData.description}
+                                </p>
+
+                                <h4 className="text-white font-semibold mb-3">Technologies Used</h4>
+                                <div className="flex flex-wrap gap-2 mb-6">
+                                    {modalData.tools.map((tool, index) => (
+                                        <span 
+                                            key={index} 
+                                            className="px-3 py-1.5 text-xs sm:text-sm font-medium bg-neutral-800 text-gray-200 rounded-lg border border-neutral-700"
+                                        >
+                                            {tool}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="p-6 border-t border-neutral-800 bg-neutral-900/90 backdrop-blur-md shrink-0">
+                                <a 
+                                    href={modalData.link} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center gap-2 w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-all active:scale-[0.98]"
+                                >
+                                    {modalData.link.includes("github") ? <FolderGit2 size={18} /> : <ExternalLink size={18} />}
+                                    Visit Project
+                                </a>
+                            </div>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </section>
     )
 }

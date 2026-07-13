@@ -29,3 +29,27 @@ html {
 body{
   margin: 20px;
 }
+
+/* --- CUSTOM SCROLLBAR --- */
+
+/* Lebar keseluruhan scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Jalur/Track di belakang scrollbar (Kita samakan dengan bg-gray-950) */
+::-webkit-scrollbar-track {
+  background: #030712; 
+}
+
+/* Bagian yang bisa ditarik (Thumb) */
+::-webkit-scrollbar-thumb {
+  background: #1e3a8a; /* Warna biru gelap (blue-900) */
+  border-radius: 10px;
+  border: 2px solid #030712; /* Memberikan ilusi jarak antara thumb dan batas layar */
+}
+
+/* Warna saat scrollbar di-hover atau ditarik */
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6; /* Warna biru terang (blue-500) saat di-hover */
+}

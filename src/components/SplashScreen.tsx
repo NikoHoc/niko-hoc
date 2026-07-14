@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import icon from '../assets/nikohoc-icon.png';
 
 export default function SplashScreen({ onLoadingComplete }: { onLoadingComplete: () => void }) {
   return (
@@ -8,7 +9,7 @@ export default function SplashScreen({ onLoadingComplete }: { onLoadingComplete:
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-950 text-white"
     >
       <motion.img
-        src='/public/icon.png'
+        src={icon}
         alt="NikoHoc Icon"
         initial={{ scale: 0.5, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

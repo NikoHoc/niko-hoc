@@ -1,4 +1,3 @@
-// 1. Tambahkan useEffect di import react
 import { useState, useEffect } from 'react'; 
 import { AnimatePresence, motion, useScroll, useSpring } from 'framer-motion'; 
 import Contact from "./components/Contact";
@@ -15,12 +14,11 @@ import Spotlight from './components/Spotlight';
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
-  // 2. TAMBAHKAN USEEFFECT INI UNTUK MENGUNCI SCROLLBAR
   useEffect(() => {
     if (isLoading) {
-      document.body.style.overflow = 'hidden'; // Sembunyikan scrollbar
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.overflow = 'unset'; // Kembalikan scrollbar setelah loading selesai
+      document.body.style.overflow = 'unset';
     }
   }, [isLoading]);
 
@@ -45,7 +43,7 @@ function App() {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="fixed top-0 left-0 right-0 h-1.5 bg-blue-500 origin-left z-[100] shadow-[0_0_15px_rgba(59,130,246,0.8)]"
+              className="fixed top-0 left-0 right-0 h-1.5 bg-blue-500 origin-left z-100 shadow-[0_0_15px_rgba(59,130,246,0.8)]"
               style={{ scaleX }}
             />
 
